@@ -1,0 +1,172 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4.5rem 0 5rem 0;
+  background-color: var(--gray-700);
+
+  color: var(--blue-400);
+  font-size: 2.5rem;
+  font-weight: 900;
+
+  & img {
+    margin-right: 0.75rem;
+  }
+
+  & span {
+    color: var(--purple-500);
+  }
+}
+
+.wrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  margin-top: -1.6875rem;
+
+  & input {
+    flex: 1;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    height: 3.375rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+    color: var(--gray-100);
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
+  }
+
+  & button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 3.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 1rem;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--blue-500);
+    color: var(--gray-100);
+
+    & svg {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: var(--blue-400);
+    }
+  }
+}
+
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 4rem;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+
+    .todosCount {
+      color: var(--blue-400);
+      font-weight: 700;
+      font-size: 0.75rem;
+
+      & span {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .todosCompleted {
+      color: var(--purple-400);
+      font-weight: 700;
+      font-size: 0.75rem;
+
+      & span {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.badge {
+  background-color: var(--gray-400);
+  color: var(--gray-100);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
+
+.emptyTodos {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: .5rem;
+
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-300);
+  font-weight: 700;
+  text-align: center;
+
+  & img {
+    margin-bottom: 1rem;
+  }
+}
+
+.todoListContent {
+  margin-top: 1.5rem;
+}
+
+.todo {
+  display: flex;
+  align-items: flex-start;
+
+  padding: 1rem;
+
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background-color: var(--gray-500);
+
+  span {
+    font-weight: 400;
+    font-size: 0.875rem;
+    flex: 1;
+  }
+
+  svg {
+    font-size: 1.125rem;
+  }
+}
+
+.checkboxRoot {
+  background-color: transparent;
+  border: 2px solid var(--blue-400);
+  height: 1.125rem;
+  width: 1.125rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-100);
+}
