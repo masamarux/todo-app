@@ -1,6 +1,6 @@
 # ![rocket](https://user-images.githubusercontent.com/45273884/192048729-f2052e29-739a-43d0-9617-a25a523bca30.svg) todo - Sua lista de tarefas
 
-![firefox_H7psbaPaak](https://user-images.githubusercontent.com/45273884/192048763-03a5bc7d-b420-49ec-be6d-32ba78b4232a.gif)
+![firefox_jyCA5tyygO](https://user-images.githubusercontent.com/45273884/192064477-3c1f778a-4272-4329-ab75-c285c9b1bb2b.gif)
 
 ## Descrição
 
