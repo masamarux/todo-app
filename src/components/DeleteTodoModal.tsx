@@ -23,7 +23,7 @@ export function DeleteTodoModal({onClose}: DeleteTodoModalProps) {
           Não será possível reverter essa ação!
         </Dialog.Description>
         <footer className={styles.buttonContainer}>
-          <Dialog.Close className={styles.closeButton} onClick={onClose}>
+          <Dialog.Close className={styles.closeButton}>
             Não, mudei de ideia
           </Dialog.Close>
           <Dialog.Close className={styles.deleteButton} onClick={onClose}>
