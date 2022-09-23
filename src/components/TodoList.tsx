@@ -1,21 +1,31 @@
 import { useSelector } from 'react-redux'
-import * as Dialog from '@radix-ui/react-dialog';
-
+import {ArrowCircleDown, ArrowCircleUp} from 'phosphor-react'
 import { TodoItem } from './TodoItem';
+import { useDispatch } from 'react-redux';
+import { reorderTodoById } from '../redux/slices/todosSlice';
 
 import styles from './TodoList.module.scss'
 import clipboardIcon from '../assets/clipboardIcon.svg'
 
 import { RootState } from '../redux/store';
-import { DeleteTodoModal } from './DeleteTodoModal';
 
 export function TodoList() {
-  const {todos} = useSelector((state: RootState) => state.todos)
+  const {todos, isReversed} = useSelector((state: RootState) => state.todos)
+  const dispatch = useDispatch()
 
   return (
     <div className={styles.todoListContainer}>
       <header>
-        <strong className={styles.todosCount}>Tarefas criadas <span className={styles.badge}>{todos.length}</span></strong>
+        <strong className={styles.todosCount}>
+          <button className={styles.arrowButton}
+            onClick={() => dispatch(reorderTodoById())}
+          >
+            {
+              isReversed ? <ArrowCircleDown /> : <ArrowCircleUp />
+            }
+          </button>
+          Tarefas criadas <span className={styles.badge}>{todos.length}</span>
+          </strong>
         <strong className={styles.todosCompleted}>Concluídas <span className={styles.badge}>
           {
             todos.length <= 0 ? (

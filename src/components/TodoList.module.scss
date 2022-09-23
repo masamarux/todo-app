@@ -9,24 +9,41 @@
     justify-content: space-between;
 
     .todosCount {
+      display: flex;
+      align-items: center;
       color: var(--blue-400);
       font-weight: 700;
       font-size: 0.75rem;
 
-      & span {
-        margin-left: 0.5rem;
-      }
+      gap: 0.5rem;
     }
 
     .todosCompleted {
+      display: flex;
+      align-items: center;
       color: var(--purple-400);
       font-weight: 700;
       font-size: 0.75rem;
 
-      & span {
-        margin-left: 0.5rem;
-      }
+      gap: 0.5rem;
     }
+  }
+}
+
+.arrowButton {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-color: transparent;
+
+  color: var(--gray-100);
+  font-size: 2rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--blue-400);
   }
 }
 

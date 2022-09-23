@@ -1,7 +1,7 @@
 import {PlusCircle} from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/slices/todosSlice';
+import { addTodo, reorderTodoById } from '../redux/slices/todosSlice';
 import styles from './InputContainer.module.scss';
 
 export function InputContainer() {

@@ -9,10 +9,12 @@ interface ITodos {
 
 export interface TodosState {
   todos: ITodos[];
+  isReversed: boolean;
 }
 
 const initialState: TodosState = {
-  todos: []
+  todos: [],
+  isReversed: false
 }
 
 export const todosSlice = createSlice({
@@ -26,7 +28,11 @@ export const todosSlice = createSlice({
         checked: false
       }
 
-      state.todos.unshift(todo)
+      if(state.isReversed) {
+        state.todos.push(todo)
+      } else {
+        state.todos.unshift(todo)
+      }
     },
     changeCheckedState: (state, action) => {
       const index = state.todos.findIndex((todo) => todo.id === action.payload)
@@ -34,26 +40,35 @@ export const todosSlice = createSlice({
       state.todos[index].checked = !state.todos[index].checked
 
       if(!state.todos[index].checked) return
+        const todos = state.todos
 
-      const todos = state.todos
+        const [completedTodo] = todos.splice(index, 1)
 
-      const [completedTodo, ...rest] = todos.splice(index, 1)
+        const uncheckedTodos = todos.filter(todo => !todo.checked)
+        const checkedTodos = todos.filter(todo => todo.checked)
 
-      const uncheckedTodos = todos.filter(todo => !todo.checked)
-      const checkedTodos = todos.filter(todo => todo.checked)
+        if(state.isReversed) {
+          checkedTodos.push(completedTodo)
 
-      checkedTodos.unshift(completedTodo)
-      
-      state.todos = [...uncheckedTodos, ...checkedTodos]
+          state.todos = [...checkedTodos, ...uncheckedTodos]
+        } else {
+          checkedTodos.unshift(completedTodo)
+
+          state.todos = [...uncheckedTodos, ...checkedTodos]
+        }
     },
     removeTodo: (state, action) => {
       const index = state.todos.findIndex((todo) => todo.id === action.payload)
 
       state.todos.splice(index, 1)
     },
-  },
+    reorderTodoById: (state) => {
+      state.todos.reverse();
+      state.isReversed = !state.isReversed;
+    }
+  }
 })
 
-export const {addTodo, changeCheckedState, removeTodo} = todosSlice.actions;
+export const {addTodo, changeCheckedState, removeTodo, reorderTodoById} = todosSlice.actions;
 
 export default todosSlice.reducer;
