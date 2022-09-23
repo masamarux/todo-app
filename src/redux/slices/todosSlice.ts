@@ -34,8 +34,17 @@ export const todosSlice = createSlice({
       state.todos[index].checked = !state.todos[index].checked
 
       if(!state.todos[index].checked) return
-      const [completedTodo, ...rest] = state.todos.splice(index, 1)
-      state.todos.push(completedTodo)
+
+      const todos = state.todos
+
+      const [completedTodo, ...rest] = todos.splice(index, 1)
+
+      const uncheckedTodos = todos.filter(todo => !todo.checked)
+      const checkedTodos = todos.filter(todo => todo.checked)
+
+      checkedTodos.unshift(completedTodo)
+      
+      state.todos = [...uncheckedTodos, ...checkedTodos]
     },
     removeTodo: (state, action) => {
       const index = state.todos.findIndex((todo) => todo.id === action.payload)
