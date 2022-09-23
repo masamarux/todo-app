@@ -6,7 +6,7 @@
 
 Este é todo, você pode acessá-lo por este [link](https://masas-todo-app.vercel.app/), ele é um projeto desafio feito após finalizar o primeiro módulo do curso Ignite React da Rocketseat visando usar, fixar e avaliar todos os conhecimentos do primeiro módulo, a função dessa aplicação é permitir ao usuário adicionar, marcar como concluído e remover "todos", uma lista de tarefas que deseje concluir e ter uma lista com seu progresso.
 
-### Como o que foi pedido para o desafio foi bem simples, por isso resolvi incrementar com algumas coisas que irei citar abaixo:
+### Como o que foi pedido para o desafio foi bem simples resolvi incrementar com algumas coisas que irei citar abaixo:
 - Adicionei redux para gerenciar os estados da aplicação de forma mais centralizada e fácil entre os componentes;
 - Também tornei os dados persistentes, assim caso atualize ou saia do navegador a sua lista de tarefas continuará lá;
 - Criei um botão que reorganizava a lista, de acordo com as posições da lista;
