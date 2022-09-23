@@ -1,0 +1,116 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    font-size: 5rem;
+    color: var(--red-400);
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      font-size: 3rem;
+    }
+  }
+}
+
+.overlay {
+  inset: 0;
+  position: fixed;
+  background-color: rgba(#000, .3);
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 40rem;
+  background-color: var(--gray-400);
+  border: 1px solid var(--red-400);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.title {
+  color: var(--gray-200);
+  font-weight: 900;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.description {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gray-300);
+
+  @media (max-width: 768px) {
+    font-size: 0.750rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+  padding: 1rem;
+  border: 0;
+  border-radius: 8px;
+
+  background-color: var(--gray-100);
+  color: var(--gray-500);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.1s, background-color 0.1s;
+
+  &:hover {
+    background-color: var(--gray-200);
+    color: var(--gray-600);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    width: 100%;
+  }
+}
+
+.deleteButton {
+  cursor: pointer;
+  padding: 1rem;
+  border: 0;
+  border-radius: 8px;
+
+  background-color: var(--red-400);
+  color: var(--gray-500);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.1s, background-color 0.1s;
+
+  &:hover {
+    background-color: var(--red-500);
+    color: var(--gray-600);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    width: 100%;
+  }
+}
+
+
